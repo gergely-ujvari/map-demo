@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "ES5",
+    "outDir": "/tmp/tsc",
+    "jsx": "react",
+    "experimentalDecorators": true,
+    "noImplicitAny": true,
+    "removeComments": false
+  },
+
+  "exclude": [
+    "node_modules",
+    ".meteor",
+    "tests"
+  ]
+}
