@@ -5,7 +5,15 @@
     "start": "meteor run"
   },
   "dependencies": {
+    "@types/react": "^0.14.52",
+    "@types/react-dom": "^0.14.19",
+    "@types/react-redux": "^4.4.35",
+    "@types/redux": "^3.6.0",
+    "babel-runtime": "6.18.0",
     "meteor-node-stubs": "~0.2.0",
-    "babel-runtime": "6.18.0"
+    "react": "^15.4.1",
+    "react-dom": "^15.4.1",
+    "react-redux": "^4.4.6",
+    "redux": "^3.6.0"
   }
 }
