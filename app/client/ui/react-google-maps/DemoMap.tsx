@@ -66,7 +66,26 @@ class _DemoMap extends React.Component<DemoMapProps, DemoMapState> {
             position: {
                 lat: 47.502776,
                 lng: 19.058289,
+            }
+        }, {
+            key: 'war-memorial',
+            icon: {
+                url: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+                size: { x:50, y:50 },
+                origin: { x:0, y:0 },
+                anchor: { x:0, y:32 },
+                scaledSize: { x:50, y:50 }
             },
+            defaultAnimation: 2,
+            label: 'C',
+            position: {
+                lat: 47.504617,
+                lng: 19.050319,
+            },
+            shape: {
+                coords: [1, 1, 1, 20, 18, 20, 18, 1],
+                type: 'poly'
+            }
         }];
     }
 
