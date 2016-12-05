@@ -46,17 +46,27 @@ class _DemoMap extends React.Component<DemoMapProps, DemoMapState> {
         this.state = {
             lat: 47.4979,
             lng: 19.0402,
-            zoom: 10,
+            zoom: 15,
         };
 
         this.markers = [{
+            key: 'parlament',
+            defaultAnimation: 2,
+            label: 'A',
             position: {
                 lat: 47.507172,
                 lng: 19.045677,
             },
-            key: 'parlament',
-            defaultAnimation: 2,
             title: 'Nagy a baj'
+        }, {
+            key: 'opera',
+            icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+            defaultAnimation: 4,
+            label: 'B',
+            position: {
+                lat: 47.502776,
+                lng: 19.058289,
+            },
         }];
     }
 
