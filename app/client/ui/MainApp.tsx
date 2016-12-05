@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { DemoMap } from "./google-map-react/DemoMap";
+import { DemoMap } from "./react-google-maps/DemoMap";
 
 
 export const MainApp:React.StatelessComponent<{}> = () => {
