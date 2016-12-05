@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-interface MapPlaceTextProps {
+export interface MapPlaceTextProps {
     lat: number; // Will be handled by GoogleMap Component
     lng: number; // Will be handled by GoogleMap Component
     text: string;
