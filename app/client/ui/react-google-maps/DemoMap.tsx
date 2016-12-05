@@ -55,7 +55,8 @@ class _DemoMap extends React.Component<DemoMapProps, DemoMapState> {
                 lng: 19.045677,
             },
             key: 'parlament',
-            defaultAnimation: 2
+            defaultAnimation: 2,
+            title: 'Nagy a baj'
         }];
     }
 
@@ -76,7 +77,6 @@ class _DemoMap extends React.Component<DemoMapProps, DemoMapState> {
     }
 
     render () {
-        console.log(this.props);
         if (!this.props.scriptLoaded) {
             return (
                 <h1>

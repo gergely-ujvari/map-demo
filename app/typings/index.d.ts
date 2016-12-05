@@ -10,11 +10,13 @@ declare module 'react-google-maps' {
     let withGoogleMap: Function;
     let GoogleMap: React.Component<any, any>;
     let Marker: React.Component<any, any>;
+    let KmlLayer: React.Component<any, any>;
 
     export {
         withGoogleMap,
         GoogleMap,
-        Marker
+        Marker,
+        KmlLayer
     }
 }
 

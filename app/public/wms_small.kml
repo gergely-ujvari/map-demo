@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:ns2="http://www.google.com/kml/ext/2.2" xmlns:ns3="http://www.w3.org/2005/Atom" xmlns:ns4="urn:oasis:names:tc:ciq:xsdschema:xAL:2.0">
+    <Document>
+        <LookAt>
+            <longitude>14.5962026157016</longitude>
+            <latitude>45.70522963911962</latitude>
+            <altitude>783919.743088901</altitude>
+            <heading>0.0</heading>
+            <tilt>0.0</tilt>
+            <range>633448.2703157489</range>
+            <altitudeMode>clampToGround</altitudeMode>
+        </LookAt>
+        <Folder>
+            <name>INISP:STI_TESZT</name>
+            <LookAt>
+                <longitude>1.5358425525928112</longitude>
+                <latitude>24.326692817418788</latitude>
+                <altitude>6507179.5451944275</altitude>
+                <heading>0.0</heading>
+                <tilt>0.0</tilt>
+                <range>5258142.384953273</range>
+                <altitudeMode>clampToGround</altitudeMode>
+            </LookAt>
+            <Placemark id="STI_TESZT.fid-740feed9_14fa79b87db_8ef">
+                <name>STI_TESZT.fid-740feed9_14fa79b87db_8ef</name>
+                <description>&lt;h4&gt;STI_TESZT&lt;/h4&gt;
+
+&lt;ul class=&quot;textattributes&quot;&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;span class=&quot;atr-name&quot;&gt;G3E_FID&lt;/span&gt;:&lt;/strong&gt; &lt;span class=&quot;atr-value&quot;&gt;1507648&lt;/span&gt;&lt;/li&gt;
+  
+&lt;/ul&gt;
+</description>
+                <LookAt>
+                    <longitude>18.520578961593472</longitude>
+                    <latitude>46.0576074729231</latitude>
+                    <altitude>1700.2687225298632</altitude>
+                    <heading>0.0</heading>
+                    <tilt>0.0</tilt>
+                    <range>1373.9063097386081</range>
+                    <altitudeMode>clampToGround</altitudeMode>
+                </LookAt>
+                <Style>
+                    <IconStyle>
+                        <color>00ffffff</color>
+                        <scale>0.4</scale>
+                        <heading>0.0</heading>
+                        <Icon>
+                            <href>http://icons.opengeo.org/markers/icon-line.1.png</href>
+                            <refreshInterval>0.0</refreshInterval>
+                            <viewRefreshTime>0.0</viewRefreshTime>
+                            <viewBoundScale>1.0</viewBoundScale>
+                        </Icon>
+                    </IconStyle>
+                    <LabelStyle>
+                        <color>00ffffff</color>
+                        <scale>0.0</scale>
+                    </LabelStyle>
+                    <LineStyle>
+                        <color>ff0000ff</color>
+                        <width>8.0</width>
+                    </LineStyle>
+                </Style>
+                <MultiGeometry>
+                    <Point>
+                        <coordinates>18.52163293605399,46.0570777401893</coordinates>
+                    </Point>
+                    <LineString>
+                        <coordinates>18.51918858717276,46.05150536881132 18.519875722284084,46.05224563598305 18.52056903836217,46.052989976144254 18.521300851374992,46.05377695319089 18.521969643342683,46.05449598115673 18.52182728505708,46.05558731724429 18.521679614789917,46.05671955947555 18.521534999738222,46.05782923653528 18.521400306908006,46.05886114622685 18.52126210480873,46.059921286395685 18.52112180904636,46.06099688960138 18.52098263844555,46.06207582658479 18.520865407447122,46.06298403565526 18.520771785025172,46.06370956017282</coordinates>
+                    </LineString>
+                </MultiGeometry>
+            </Placemark>
+</Folder>
+</Document>
