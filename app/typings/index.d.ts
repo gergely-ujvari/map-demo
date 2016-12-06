@@ -58,3 +58,13 @@ declare module 'meteor/aldeed:simple-schema' {
         messages(messages:{[key:string]:string}):void;
     };
 }
+
+// this declares new methods and attributes to the mongo database
+declare module "meteor/mongo" {
+    export module Mongo {
+        export interface Collection<T> {
+            attachSchema(schema:SimpleSchemaModule.SimpleSchema):any;
+            'do': any;
+        }
+    }
+}

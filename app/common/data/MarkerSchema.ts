@@ -40,7 +40,7 @@ const MarkerIconImageSchema = new SimpleSchema({
     }
 });
 
-export const MarkerShapeSchema = new SimpleSchema({
+const MarkerShapeSchema = new SimpleSchema({
     coords: {
         type: [Number],
         optional: true

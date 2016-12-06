@@ -26,3 +26,4 @@ nemo64:bootstrap
 react-meteor-data
 session@1.1.7
 aldeed:simple-schema
+aldeed:collection2
