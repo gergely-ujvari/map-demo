@@ -18,12 +18,20 @@ export const MapComponent = withGoogleMap((props:MapComponentProps) => {
         return props.markers.map((marker:MarkerProps, index:number) => {
             let cloned:any;
             if (marker.icon && (marker.icon as IconImage).url) {
+                // Transform marker.icon properties to proper google classes
                 let icon:IconImage = (marker.icon as IconImage);
                 cloned = Object.assign({}, marker);
-                cloned.icon.size = new (window as any).google.maps.Size(icon.size.x, icon.size.y);
-                cloned.icon.origin = new (window as any).google.maps.Point(icon.origin.x, icon.origin.y);
-                cloned.icon.anchor = new (window as any).google.maps.Point(icon.anchor.x, icon.anchor.y);
+                if (icon.size) {
+                    cloned.icon.size = new (window as any).google.maps.Size(icon.size.x, icon.size.y);
+                }
+                if (icon.origin) {
+                    cloned.icon.origin = new (window as any).google.maps.Point(icon.origin.x, icon.origin.y);
 
+                }
+                if (icon.anchor) {
+                    cloned.icon.origin = new (window as any).google.maps.Point(icon.origin.x, icon.origin.y);
+
+                }
                 if (icon.scaledSize) {
                     cloned.icon.scaledSize = new (window as any).google.maps.Size(icon.scaledSize.x, icon.scaledSize.y);
                 }
