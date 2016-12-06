@@ -20,8 +20,13 @@ function generateRegionCoordinates (region) {
             lat = getRandomArbitrary(46.52616060194396, 46.6813671123628);
             lng = getRandomArbitrary(18.582765345764187, 19.132081752014187);
         } else {
-            lat = getRandomArbitrary(44.84723460305939, 49.7450105578486);
-            lng = getRandomArbitrary(10.49425292510989, 28.07237792510989);
+            if (region === 'debrecen') {
+                lat = getRandomArbitrary(47.4537230411899, 47.61204239455961);
+                lng = getRandomArbitrary(21.414019351196316, 21.963335757446316);
+            } else {
+                lat = getRandomArbitrary(44.84723460305939, 49.7450105578486);
+                lng = getRandomArbitrary(10.49425292510989, 28.07237792510989);
+            }
         }
     }
 
@@ -47,15 +52,11 @@ try {
     var db = conn.getDB('icontest');
 
     print('*** Start ***');
-    print(REGION);
-    print(NUMBER);
 
     var number = 1;
     if (NUMBER) {
         number = NUMBER;
     }
-
-    print(number);
 
     print('*** Generated marker(s) ***');
     for (var i = 0; i < number ; i++) {
