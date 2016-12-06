@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import GoogleMap from 'google-map-react';
-import { Coordinate } from "../../non-ui/spatial";
+import { Coordinate } from "../../../common/data/MarkerData";
 import { MapPlaceText, MapPlaceTextProps } from "./MapPlaceText";
 
 const apiKey = 'AIzaSyClgJQPRWyz2mefIdo-STFuK3twHnchQfE';

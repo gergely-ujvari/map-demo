@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { MapComponent } from "./MapComponent";
-import { Coordinate } from "../../non-ui/spatial";
+import { Coordinate } from "../../../common/data/MarkerData";
 
 interface DemoMapProps {
 

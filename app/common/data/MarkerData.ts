@@ -1,6 +1,3 @@
-import MarkerShape = google.maps.MarkerShape;
-import LatLng = google.maps.LatLng;
-import Point = google.maps.Point;
 
 export interface Coordinate {
     lat: number;
@@ -12,27 +9,27 @@ export interface MarkerPoint {
     y: number;
 }
 
+export interface MarkerShape {
+    coords?: number[];
+    type?: string;
+}
+
 export interface IconImage {
     url: string;
-    size: MarkerPoint;
-    origin: MarkerPoint;
-    anchor: MarkerPoint;
+    size?: MarkerPoint;
+    origin?: MarkerPoint;
+    anchor?: MarkerPoint;
     scaledSize?: MarkerPoint;
 }
 
-export interface MarkerProps {
+export interface MarkerData {
+    _id: string;
     defaultAnimation?: number;
-    icon?: string | IconImage;
+    icon?: IconImage;
     key?: string;
     label?: string;
     position: Coordinate;
+    region: string;
     shape?: MarkerShape;
     title?: string; // Tooltip
-}
-
-
-export interface MapMouseEvent {
-    ca: Point;
-    latLng: LatLng;
-    pixel: Point;
 }

@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { withGoogleMap, GoogleMap, Marker } from "react-google-maps";
-import { Coordinate, MarkerProps, IconImage } from "../../non-ui/spatial";
+import { Coordinate, MarkerData, IconImage } from "../../../common/data/MarkerData";
 
 interface MapComponentProps {
     center: Coordinate;
     zoom: number;
-    markers: MarkerProps[];
+    markers: MarkerData[];
     onMapClick: Function;
     onMapLoad: Function;
     onCenterChange: (center: Coordinate) => void;
@@ -16,12 +16,11 @@ interface MapComponentProps {
 
 export const MapComponent = withGoogleMap((props:MapComponentProps) => {
     const renderMarkers = () => {
-        return props.markers.map((marker:MarkerProps, index:number) => {
-            let cloned:any;
-            if (marker.icon && (marker.icon as IconImage).url) {
+        return props.markers.map((marker:MarkerData, index:number) => {
+            let cloned:any = Object.assign({}, marker);
+            if (marker.icon && marker.icon.size) {
                 // Transform marker.icon properties to proper google classes
-                let icon:IconImage = (marker.icon as IconImage);
-                cloned = Object.assign({}, marker);
+                let icon:IconImage = marker.icon;
                 if (icon.size) {
                     cloned.icon.size = new (window as any).google.maps.Size(icon.size.x, icon.size.y);
                 }
@@ -37,13 +36,21 @@ export const MapComponent = withGoogleMap((props:MapComponentProps) => {
                     cloned.icon.scaledSize = new (window as any).google.maps.Size(icon.scaledSize.x, icon.scaledSize.y);
                 }
             } else {
-                cloned = marker
+                if (marker.icon)  {
+                    cloned.icon = marker.icon.url;
+                }
             }
+
+            if (!cloned.key) {
+                cloned.key = cloned._id;
+            }
+
             return (
                  <Marker
                      {... cloned}
                  />
             )
+
         });
     };
 

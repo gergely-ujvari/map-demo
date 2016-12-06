@@ -1,10 +1,11 @@
-///<reference path="../../non-ui/spatial.ts"/>
+///<reference path="../../../common/data/MarkerData.ts"/>
 import * as React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { createContainer } from "meteor/react-meteor-data";
 import { Session } from "meteor/session";
-import { Coordinate, MarkerProps, MapMouseEvent } from "../../non-ui/spatial";
+import { Coordinate, MarkerData } from "../../../common/data/MarkerData";
 import { MapComponent } from "./MapComponent";
+import { MapMouseEvent } from "../../non-ui/MapEvents";
 
 // ToDo: move this to a separate file
 const apiKey = 'AIzaSyClgJQPRWyz2mefIdo-STFuK3twHnchQfE';
@@ -34,7 +35,7 @@ interface DemoMapProps {
 interface DemoMapState {
     lat: number;
     lng: number;
-    markers: MarkerProps[];
+    markers: MarkerData[];
     zoom: number;
 }
 
@@ -50,6 +51,7 @@ class _DemoMap extends React.Component<DemoMapProps, DemoMapState> {
             lng: 19.0402,
             zoom: 15,
             markers: [{
+                _id: '1',
                 key: 'parlament',
                 defaultAnimation: 2,
                 label: 'A',
@@ -57,17 +59,23 @@ class _DemoMap extends React.Component<DemoMapProps, DemoMapState> {
                     lat: 47.507172,
                     lng: 19.045677,
                 },
+                region: 'Budapest',
                 title: 'Nagy a baj'
             }, {
+                _id: '2',
                 key: 'opera',
-                icon: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
+                icon: {
+                    url: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'
+                },
                 defaultAnimation: 4,
                 label: 'B',
                 position: {
                     lat: 47.502776,
                     lng: 19.058289,
-                }
+                },
+                region: 'Budapest',
             }, {
+                _id: '3',
                 key: 'war-memorial',
                 icon: {
                     url: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
@@ -82,6 +90,7 @@ class _DemoMap extends React.Component<DemoMapProps, DemoMapState> {
                     lat: 47.504617,
                     lng: 19.050319,
                 },
+                region: 'Budapest',
                 shape: {
                     coords: [1, 1, 1, 20, 18, 20, 18, 1],
                     type: 'poly'
@@ -109,14 +118,17 @@ class _DemoMap extends React.Component<DemoMapProps, DemoMapState> {
 
     private onMapClick (event:MapMouseEvent) {
         this.index++;
-        let newMarker:MarkerProps = {
+        const key:string = this.alphabet[this.index] + '-' + event.latLng.lat() + '-' + event.latLng.lng();
+        let newMarker:MarkerData = {
+            _id: key,
             key: this.alphabet[this.index] + '-' + event.latLng.lat() + '-' + event.latLng.lng(),
             defaultAnimation: 2,
             label: this.alphabet[this.index],
             position: {
                 lat: event.latLng.lat(),
                 lng: event.latLng.lng()
-            }
+            },
+            region: 'Budapest'
         };
 
         let markers = this.state.markers.slice();
