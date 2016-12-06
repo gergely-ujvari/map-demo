@@ -6,6 +6,7 @@ interface MapComponentProps {
     center: Coordinate;
     zoom: number;
     markers: MarkerProps[];
+    onMapClick: Function;
     onMapLoad: Function;
     onCenterChange: (center: Coordinate) => void;
     onBoundsChange: (center: Coordinate, zoom: number, bounds: number[], marginBounds: number[]) => void;
@@ -52,6 +53,7 @@ export const MapComponent = withGoogleMap((props:MapComponentProps) => {
                    zoom={props.zoom}
                    onBoundsChange={props.onBoundsChange}
                    onCenterChange={props.onCenterChange}
+                   onClick={props.onMapClick}
         >
             {renderMarkers()}
         </GoogleMap>
