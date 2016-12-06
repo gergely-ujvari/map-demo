@@ -42,6 +42,7 @@ interface DemoMapState {
 class _DemoMap extends React.Component<DemoMapProps, DemoMapState> {
     private alphabet:string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz';
     private index:number;
+    private map:google.maps.Map;
 
     constructor (props:DemoMapProps) {
         super(props);
@@ -100,20 +101,23 @@ class _DemoMap extends React.Component<DemoMapProps, DemoMapState> {
         this.index = 2;
     }
 
-    private onCenterChange (lat: number, lng: number) {
+    private onCenterChanged (lat: number, lng: number) {
+        let center = this.map.getCenter();
         this.setState({
-            lat, lng
+            lat: center.lat(), lng: center.lng()
         } as DemoMapState);
     }
 
-    private onBoundsChange (center: Coordinate, zoom: number, bounds: number[], marginBounds: number[]) {
+    private onBoundsChanged () {
+        let center = this.map.getCenter();
         this.setState({
-            lat: center.lat, lng: center.lng, zoom: zoom
+            lat: center.lat(), lng: center.lng(), zoom: this.map.getZoom()
         } as DemoMapState);
+        console.log(this.map.getBounds());
     }
 
-    private onMapLoad () {
-
+    private onMapLoad (map:google.maps.Map) {
+        this.map = map;
     }
 
     private onMapClick (event:MapMouseEvent) {
@@ -152,10 +156,10 @@ class _DemoMap extends React.Component<DemoMapProps, DemoMapState> {
                 center={{lat: st.lat, lng: st.lng}}
                 markers={st.markers}
                 zoom={st.zoom}
-                onCenterChange={this.onCenterChange.bind(this)}
-                onBoundsChange={this.onBoundsChange.bind(this)}
+                onCenterChanged={this.onCenterChanged.bind(this)}
+                onBoundsChanged={this.onBoundsChanged.bind(this)}
                 onMapClick={this.onMapClick.bind(this)}
-                onMaplLoad={this.onMapLoad.bind(this)}
+                onMapLoad={this.onMapLoad.bind(this)}
                 containerElement={
                     <div style={{ height: `100%` }} />
                     }

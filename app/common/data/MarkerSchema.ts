@@ -54,7 +54,7 @@ const MarkerShapeSchema = new SimpleSchema({
 export const MarkerSchema = new SimpleSchema({
     _id: {
         type: String,
-        max: 32
+        max: 48
     },
     defaultAnimation: {
         type: Number,

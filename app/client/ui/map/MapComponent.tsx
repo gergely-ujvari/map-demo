@@ -8,8 +8,8 @@ interface MapComponentProps {
     markers: MarkerData[];
     onMapClick: Function;
     onMapLoad: Function;
-    onCenterChange: (center: Coordinate) => void;
-    onBoundsChange: (center: Coordinate, zoom: number, bounds: number[], marginBounds: number[]) => void;
+    onCenterChanged: (center: Coordinate) => void;
+    onBoundsChanged: (center: Coordinate, zoom: number, bounds: number[], marginBounds: number[]) => void;
     containerElement: JSX.Element;
     mapElement: JSX.Element;
 }
@@ -58,8 +58,8 @@ export const MapComponent = withGoogleMap((props:MapComponentProps) => {
         <GoogleMap center={props.center}
                    ref={props.onMapLoad}
                    zoom={props.zoom}
-                   onBoundsChange={props.onBoundsChange}
-                   onCenterChange={props.onCenterChange}
+                   onBoundsChanged={props.onBoundsChanged}
+                   onCenterChanged={props.onCenterChanged}
                    onClick={props.onMapClick}
         >
             {renderMarkers()}
